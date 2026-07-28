@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Zero Kata AI</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+<body>
+
+  <h1>Zero Kata</h1>
+
+  <!-- NAME SCREEN -->
+
+  <div
+    class="name-screen"
+    id="aiMenu"
+  >
+
+    <input
+      type="text"
+      id="playerName"
+      placeholder="Enter Your Name" required>
+
+    <button onclick="startGame()">
+      Start Game
+    </button>
+
+  </div>
+
+  <!-- GAME -->
+
+  <div
+    class="game hidden"
+    id="game"
+  >
+
+    <h3 id="players">
+      You vs AI
+    </h3>
+
+    <h2 id="turn">
+      Turn: O
+    </h2>
+
+    <h3 id="moveText">
+      O's Move
+    </h3>
+
+    <p id="message"></p>
+
+    <!-- GRID -->
+
+    <div id="grid"></div>
+
+    <!-- BUTTONS -->
+
+    <button
+      class="restart"
+      onclick="resetGame()"
+    >
+      Restart
+    </button>
+
+    <button
+      class="restart"
+      onclick="
+      location.href='index.html'
+      "
+    >
+      Back
+    </button>
+
+  </div>
+
+  <!-- POPUP -->
+
+  <div
+    id="popup"
+    class="popup hidden"
+  >
+
+    <div class="popup-box">
+
+      <h1 id="popupTitle">
+        You Win 🎉
+      </h1>
+
+      <button onclick="closePopup()">
+        Continue
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- SCRIPT -->
+
+  <script src="ai.js"></script>
+<audio id="clickSound">
+
+  <source
+    src="sounds/click.mp3"
+    type="audio/mp3"
+  >
+</body>
+</html>

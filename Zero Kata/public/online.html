@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Zero Kata Online
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="online.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- TITLE -->
+
+  <h1>Zero Kata</h1>
+
+  <!-- MENU -->
+
+  <div
+    class="name-screen"
+    id="menu"
+  >
+
+    <input
+      type="text"
+      id="username"
+      placeholder="Enter Username"
+    required>
+
+    <button onclick="createRoom()">
+      Create Room
+    </button>
+
+    <h3 class="orText">
+      OR
+    </h3>
+
+    <input
+      type="text"
+      id="roomInput"
+      placeholder="Enter Room ID"
+    required>
+
+    <button onclick="joinRoom()">
+      Join Room
+    </button>
+
+  </div>
+
+  <!-- WAITING -->
+
+  <div
+    class="game hidden"
+    id="waiting"
+  >
+
+    <h2>
+      Waiting For Player...
+    </h2>
+
+    <h1 id="roomText"></h1>
+
+  </div>
+
+  <!-- GAME -->
+
+  <div
+    class="game hidden"
+    id="game"
+  >
+
+    <!-- PLAYERS -->
+
+    <h3 id="players"></h3>
+
+    <!-- TURN -->
+
+    <h2 id="turn">
+      Turn: O
+    </h2>
+
+    <!-- MOVE -->
+
+    <h3 id="moveText">
+      Your Move
+    </h3>
+
+    <!-- MESSAGE -->
+
+    <p id="message"></p>
+
+    <!-- GRID -->
+
+    <div id="grid">
+
+      <div id="line"></div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <button
+      class="restart"
+      onclick="resetGame()"
+    >
+      Restart
+    </button>
+
+  </div>
+
+  <!-- POPUP -->
+
+  <div
+    class="popup hidden"
+    id="popup"
+  >
+
+    <div class="popup-box">
+
+      <h1 id="popupTitle">
+        You Win 🎉
+      </h1>
+
+      <button onclick="closePopup()">
+        Continue
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- SOCKET -->
+
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!-- JS -->
+
+  <script src="online.js"></script>
+<audio id="clickSound">
+
+  <source
+    src="sounds/click.mp3"
+    type="audio/mp3"
+  >
+
+</audio>
+</body>
+</html>
