@@ -1,210 +1,264 @@
-# 🎮 Zero Kata
+# 🚀 SprintDesk
 
-A real-time multiplayer **Zero Kata** game built using **HTML, CSS, JavaScript, Node.js, Express.js, and Socket.IO**.
+## Agile Project Management Dashboard
 
-Players can connect with each other and play the game in real time through a Socket.IO-powered server.
+A modern, responsive project management dashboard built with React and TypeScript.
 
-## 🚀 Live Demo
+**Live Demo:** https://sprintdesk-plum.vercel.app  
+**GitHub:** https://github.com/Shivchran/sprintdesk  
+**YouTube Demo:** https://youtu.be/3xgJdI9mImA
 
-🔗 **Live Demo:** https://zero-kata-zuu3.onrender.com
-
-## 📂 GitHub Repository
-
-🔗 **GitHub:** https://github.com/Shivchran/Zero-Kata
+> **CODE • BUILD • LEARN • GROW**
 
 ---
 
-## ✨ Features
+## 1. Project Overview
 
-* 🎮 Real-time multiplayer gameplay
-* 🔄 Real-time player communication using Socket.IO
-* 🧑‍🤝‍🧑 Multiplayer game support
-* 🏆 Win detection
-* 🤝 Draw detection
-* 🔄 Game restart/reset functionality
-* 📱 Responsive user interface
-* ⚡ Fast client-server communication
-* 🎨 Interactive game UI
+SprintDesk is a modern and responsive Agile Project Management Dashboard. It helps users manage sprints, organize tasks using a Kanban board, track project progress, view analytics, receive notifications, and manage tasks through an intuitive interface.
 
 ---
 
-## 🛠️ Technologies Used
+## 2. Features
 
-### Frontend
-
-* HTML5
-* CSS3
-* JavaScript
-
-### Backend
-
-* Node.js
-* Express.js
-* Socket.IO
-
-### Development Tools
-
-* Git
-* GitHub
-* VS Code
-* npm
+| Feature | Description |
+|---|---|
+| **Authentication** | User login, protected routes, token-based authentication and logout. |
+| **Dashboard** | Sprint selector, overview cards, task statistics and progress tracking. |
+| **Kanban Board** | Backlog, In Progress, Review and Done with drag-and-drop task management. |
+| **Task Management** | Add/delete tasks, details, priorities, assignees and comments. |
+| **Search & Filters** | Search and filter tasks by priority, status and assignee. |
+| **Notifications** | Notification bell, unread count, polling, read controls and toast notifications. |
+| **Analytics** | Status, priority, sprint and completion-trend charts. |
+| **Dark Mode** | Light and dark themes with a theme toggle. |
+| **Responsive UI** | Designed for desktop, tablet and mobile screens. |
 
 ---
 
-## 📁 Project Structure
+## 3. Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **React** | UI development |
+| **TypeScript** | Type-safe development |
+| **Vite** | Development and build tooling |
+| **Tailwind CSS** | Styling and responsive UI |
+| **Zustand** | State management |
+| **React Router** | Application routing |
+| **dnd-kit** | Drag-and-drop interactions |
+| **Recharts** | Data visualization |
+| **REST API** | API integration |
+| **Git / GitHub** | Version control and code hosting |
+| **Vercel** | Deployment |
+
+---
+
+## 4. Project Structure
 
 ```text
-zero-kata/
-│
+sprintdesk/
 ├── public/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-│
-├── server.js
+├── src/
+│   ├── components/
+│   │   ├── layout/
+│   │   └── ui/
+│   ├── data/
+│   │   └── mock-data.json
+│   ├── hooks/
+│   ├── pages/
+│   │   ├── DashboardPage.tsx
+│   │   ├── AnalyticsPage.tsx
+│   │   └── LoginPage.tsx
+│   ├── services/
+│   │   └── api/
+│   ├── stores/
+│   ├── types/
+│   ├── App.tsx
+│   └── main.tsx
 ├── package.json
-├── package-lock.json
+├── vite.config.ts
+├── tsconfig.json
 └── README.md
 ```
 
-> Your actual folder structure may be slightly different depending on how you created the project.
-
 ---
 
-## ⚙️ Installation
+## 5. Getting Started
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/shivchran/zero-kata.git
-```
-
-### 2. Open the project
+### Clone the repository
 
 ```bash
-cd zero-kata
+git clone https://github.com/Shivchran/sprintdesk.git
 ```
 
-### 3. Install dependencies
+### Navigate to the project
+
+```bash
+cd sprintdesk
+```
+
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Start the server
+### Start the development server
 
 ```bash
-node server.js
+npm run dev
 ```
 
-Or, if your `package.json` contains a start script:
+The application will normally be available at:
+
+**http://localhost:5173**
+
+---
+
+## 6. Production Build
+
+### Build the application
 
 ```bash
-npm start
+npm run build
 ```
 
-### 5. Open in browser
+### Preview the production build
+
+```bash
+npm run preview
+```
+
+---
+
+## 7. Application Flow
 
 ```text
-http://localhost:5000
+Login
+  ↓
+Authentication
+  ↓
+Dashboard
+  ├── Sprint Selection
+  ├── Task Board
+  │    ├── Backlog
+  │    ├── In Progress
+  │    ├── Review
+  │    └── Done
+  ├── Task Management
+  ├── Search & Filters
+  ├── Notifications
+  └── Analytics
 ```
-
-> Use the port defined in your `server.js` if it is different from `5000`.
 
 ---
 
-## 🔌 How Socket.IO Works
+## 8. Notification System
 
-Zero Kata uses **Socket.IO** to provide real-time communication between players.
+SprintDesk periodically requests notification data, checks for new notifications, stores them using Zustand, and exposes them through the notification bell, notification panel and toast notification UI.
 
-The basic flow is:
+---
+
+## 9. Analytics
+
+- **Task Status:** Distribution of tasks across workflow stages.
+- **Priority Breakdown:** Tasks grouped by priority.
+- **Tasks by Sprint:** Task distribution across sprints.
+- **Completion Trend:** Task completion progress over time.
+- **Summary:** Overall completion progress and task counts.
+
+---
+
+## 10. Security Considerations
+
+For production applications, authentication and refresh tokens should be handled securely.
+
+Recommended practices include:
+
+- HTTPS
+- Secure and HttpOnly cookies where appropriate
+- Token expiration
+- Refresh-token rotation
+- Server-side validation
+- Environment variables for secrets
+- Never committing secrets to GitHub
+
+---
+
+## 11. Deployment
+
+SprintDesk is deployed using **Vercel**.
+
+The typical workflow is:
 
 ```text
-Player 1
-   │
-   │ Game Move
-   ▼
-Socket.IO Server
-   │
-   │ Real-time Event
-   ▼
-Player 2
+Local Development → Git → GitHub → Vercel → Production
 ```
 
-When one player makes a move, the server communicates the move to the other connected player so that both game boards stay synchronized.
+**Live application:**  
+https://sprintdesk-plum.vercel.app
 
 ---
 
-## 🎮 How to Play
+## 12. Project Objectives
 
-1. Open the game.
-2. Connect with another player.
-3. Start the game.
-4. Players take turns making moves.
-5. The game checks for a winning combination after each move.
-6. The game displays the winner or draw result.
-7. Start a new game using the restart option.
-
----
-
-## 🧠 Main Concepts Used
-
-This project helped implement practical concepts such as:
-
-* DOM manipulation
-* JavaScript event handling
-* Game-state management
-* Client-server communication
-* WebSockets
-* Socket.IO events
-* Node.js server development
-* Express.js
-* Responsive UI design
+- Build a modern React application.
+- Practice TypeScript and reusable component architecture.
+- Implement Zustand state management.
+- Implement drag-and-drop task management.
+- Work with REST APIs.
+- Create data visualizations with Recharts.
+- Build responsive interfaces with Tailwind CSS.
+- Implement authentication and protected routes.
+- Deploy a production-ready frontend application.
 
 ---
 
-## 📸 Screenshots
+## 13. What I Learned
 
-<img width="1365" height="658" alt="image" src="https://github.com/user-attachments/assets/61a1525f-b2d6-4a12-a635-dcc48371cef6" />
-<img width="1365" height="680" alt="image" src="https://github.com/user-attachments/assets/8aa20dfd-feb4-4235-9248-1fc00c4316e1" />
-
-
-
-```text
-![Zero Kata Game]
-```
+React component architecture, TypeScript, React Router, Zustand state management, REST API integration, drag-and-drop interfaces, Recharts, Tailwind CSS, responsive web design, authentication, protected routes, notification polling, Git/GitHub and Vercel deployment.
 
 ---
 
-## 🔮 Future Improvements
+## 14. Future Improvements
 
-Possible future features:
-
-* 🤖 AI opponent
-* 🌐 Online room creation
-* 🔐 Private game rooms
-* 💬 In-game chat
-* 🏆 Player score system
-* 👤 Player profiles
-* 📊 Game history
-* 📱 Improved mobile experience
-* 🔊 Sound effects
-* ✨ Advanced animations
-
----
-
-## 👨‍💻 Author
-
-**SACHIN UPMANYU**
-
-Frontend Developer | MCA Student
-
-### Skills
-
-HTML • CSS • JavaScript • React.js • Node.js • Socket.IO
+- Real backend API
+- PostgreSQL or MongoDB database
+- Real-time notifications using WebSockets
+- Team management
+- Role-based access control
+- User invitation system
+- File attachments
+- Advanced task editing
+- Sprint and project creation
+- Real-time collaboration
+- Automated testing
 
 ---
 
-## ⭐ Support
+## 15. Author
 
-If you like this project, consider giving the repository a ⭐ on GitHub.
+### Sachin Upamanyu
+
+**Frontend Developer | Software Engineer**
+
+> **CODE • BUILD • LEARN • GROW**
+
+---
+
+## 16. Project Links
+
+### Live Demo
+
+https://sprintdesk-plum.vercel.app
+
+### GitHub Repository
+
+https://github.com/Shivchran/sprintdesk
+
+### YouTube Demo
+
+https://youtu.be/3xgJdI9mImA
+
+---
+
+⭐ If you find this project useful or interesting, consider giving the repository a star on GitHub.
